@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 
 const router = express.Router();
 
-router.post('/register', verifyToken, checkRole(ROLES.ADMIN), async (req, res) => {
+router.post('/register', verifyToken, async (req, res) => {
     const { username, password, role, districtId } = req.body;
   
     if (!Object.values(ROLES).includes(role)) {
